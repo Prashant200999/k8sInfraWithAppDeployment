@@ -16,7 +16,7 @@ echo "Waiting for Ingress to get an external IP..."
 sleep 15 # Wait for the load balancer to provision, adjust this if needed
 
 # Get the external IP of the Ingress
-EXTERNAL_IP=$(kubectl get ingress --output=jsonpath='{.items[0].status.loadBalancer.ingress[0].ip}')
+EXTERNAL_IP=$(kubectl get svc frontend-app-service -o=jsonpath='{.status.loadBalancer.ingress[0].hostname}')
 
 if [ -z "$EXTERNAL_IP" ]; then
     echo "Load balancer external IP is not yet available. Try again later."
