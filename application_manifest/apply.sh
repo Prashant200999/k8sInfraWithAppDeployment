@@ -8,9 +8,8 @@ kubectl apply -f mysql-secrets.yml
 kubectl apply -f mysql-service.yml
 kubectl apply -f frontend-deployment.yml
 kubectl apply -f frontend-service.yml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
 kubectl apply -f ingress.yml
-
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
 
 # Wait for Ingress to get external IP
 echo "Waiting for Ingress to get an external IP..."
