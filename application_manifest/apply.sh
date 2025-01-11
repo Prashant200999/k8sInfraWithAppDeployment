@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Apply Kubernetes resources
-kubectl apply -f mysql-configmap.yml
 kubectl apply -f persistent-volume.yml
-kubectl apply -f statefulsets.yml
 kubectl apply -f mysql-secrets.yml
+kubectl apply -f mysql-configmap.yml
+kubectl apply -f statefulsets.yml
 kubectl apply -f mysql-service.yml
 kubectl apply -f frontend-deployment.yml
 kubectl apply -f frontend-service.yml
